@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Sara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portfólio de Sara</h1>
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="sobre">
+    <h2>Sobre</h2>
+    <p>Olá, meu nome é Sara e sou uma Analista de Dados apaixonada por transformar informações em insights que impulsionam o sucesso dos negócios. Tenho formação em Administração e especialização em Data Science pela USP ESALQ. Minha missão é ajudar empresas a tomar decisões estratégicas com base em dados confiáveis e análises aprofundadas.</p>
+</section>
+
+<section id="portfolio">
+    <h2>Portfólio</h2>
+    <p>Aqui estão alguns dos projetos que desenvolvi:</p>
+    <ul>
+        <li><a href="link-do-projeto1" target="_blank">Análise de Mercado: Insights de consumo e comportamento do cliente</a></li>
+        <li><a href="link-do-projeto2" target="_blank">Previsão de Demanda: Modelagem com séries temporais</a></li>
+        <li><a href="link-do-projeto3" target="_blank">Análise de Sentimento: Percepções de clientes em redes sociais</a></li>
+    </ul>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <p>Fique à vontade para entrar em contato comigo:</p>
+    <ul>
+        <li>Email: <a href="mailto:sara.analista@gmail.com">sara.analista@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/sara-analista" target="_blank">https://linkedin.com/in/sara-analista</a></li>
+        <li>GitHub: <a href="https://github.com/sara-analista" target="_blank">https://github.com/sara-analista</a></li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2024 Sara | Desenvolvido com 💻 e 💡</p>
+</footer>
+
+</body>
+</html>
+
