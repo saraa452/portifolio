@@ -1,9 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+
+# Definir o caminho para a pasta de resultados
+resultados_path = r'E:\Portifólio\portifolio\resultados\modelagem_vendas'
 
 # Carregar o arquivo CSV com o separador correto
-df = pd.read_csv(r'E:\Portifólio\portifolio\dados\vendas.csv', sep=';')
+df = pd.read_csv(r'E:\Portifólio\portifolio\dados\processado_vendas.csv', sep=';')
 
 # Limpar os espaços em branco dos nomes das colunas
 df.columns = df.columns.str.strip()
@@ -19,6 +23,7 @@ for col in required_columns:
 # Usar um estilo do seaborn diretamente
 sns.set_theme(style="darkgrid")
 sns.set_palette('viridis')
+
 
 # 1. Visão Geral dos Dados
 print("Resumo Estatístico:")
@@ -84,5 +89,7 @@ plt.show()
 
 # 6. Exportar resumo para arquivo CSV
 resumo = df.groupby('Produto')['Valor_Total'].sum().reset_index()
-resumo.to_csv('resumo_analise_vendas.csv', index=False, sep=';')
-print("Resumo exportado para 'resumo_analise_vendas.csv'.")
+# Salvar o resumo na pasta de resultados
+resumo.to_csv(os.path.join(resultados_path, 'resumo_comportamento_clientes.csv'), sep=';')
+print("Resumo exportado para 'resultados/análise_clientes/resumo_comportamento_clientes.csv'.")
+
