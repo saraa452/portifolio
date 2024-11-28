@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Sara</title>
     <style>
+        /* Estilos gerais */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #F5F5F5; /* Fundo neutro */
+            color: #333333; /* Texto escuro */
         }
         header {
-            background-color: #4CAF50;
+            background-color: #005B96; /* Azul-profissional */
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -44,18 +45,66 @@
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #333;
+            background-color: #333333; /* Fundo escuro */
             color: white;
             margin-top: 20px;
         }
+        h2, h3 {
+            color: #005B96; /* Azul-profissional para títulos */
+        }
         a {
-            color: #4CAF50;
+            color: #005B96; /* Links */
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
+        /* Estilos das abas */
+        .tabs {
+            display: flex;
+            justify-content: flex-start;
+            border-bottom: 2px solid #005B96;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #F5F5F5;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-right: 1px solid #CCCCCC;
+        }
+        .tabs button.active {
+            background-color: #005B96;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        /* Seção de contato */
+        .contato ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contato ul li {
+            margin: 10px 0;
+        }
     </style>
+    <script>
+        function openTab(tabGroup, tabName) {
+            const tabs = document.querySelectorAll(`.${tabGroup} .tab-content`);
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const buttons = document.querySelectorAll(`.${tabGroup} .tabs button`);
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+        }
+    </script>
 </head>
 <body>
 
@@ -63,34 +112,110 @@
     <h1>Portfólio de Sara</h1>
     <nav>
         <ul>
+            <li><a href="index.html">Início</a></li>
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#projetos">Projetos</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
 </header>
 
+<!-- Seção Sobre -->
 <section id="sobre">
-    <h2>Sobre</h2>
-    <p>Olá, meu nome é Sara e sou uma Analista de Dados apaixonada por transformar informações em insights que impulsionam o sucesso dos negócios. Tenho formação em Administração e especialização em Data Science pela USP ESALQ. Minha missão é ajudar empresas a tomar decisões estratégicas com base em dados confiáveis e análises aprofundadas.</p>
+    <h2>Sobre Sara</h2>
+    <p>Olá! Sou Sara, analista de dados com 3 anos de experiência. Trabalho como freelance transformando dados brutos em soluções estratégicas. Tenho uma paixão por explorar e interpretar dados para ajudar empresas a tomarem decisões mais informadas e alcançarem o sucesso.</p>
+    <p>Minha experiência inclui trabalhar com ferramentas como Python, R, SQL, Tableau e Power BI. Além disso, sou especialista em análise estatística e visualização de dados, sempre buscando oferecer insights valiosos para os meus clientes.</p>
 </section>
 
-<section id="portfolio">
-    <h2>Portfólio</h2>
-    <p>Aqui estão alguns dos projetos que desenvolvi:</p>
-    <ul>
-        <li><a href="link-do-projeto1" target="_blank">Análise de Mercado: Insights de consumo e comportamento do cliente</a></li>
-        <li><a href="link-do-projeto2" target="_blank">Previsão de Demanda: Modelagem com séries temporais</a></li>
-        <li><a href="link-do-projeto3" target="_blank">Análise de Sentimento: Percepções de clientes em redes sociais</a></li>
-    </ul>
+<!-- Projetos -->
+<section id="projetos">
+    <h2>Projetos</h2>
+
+    <!-- Projeto 1 -->
+    <article>
+        <h3>Projeto 1: Análise de Mercado</h3>
+        <div class="tabs-group-1">
+            <div class="tabs">
+                <button class="active" data-tab="descricao1" onclick="openTab('tabs-group-1', 'descricao1')">Descrição</button>
+                <button data-tab="dados1" onclick="openTab('tabs-group-1', 'dados1')">Dados (CSV)</button>
+                <button data-tab="codigo1" onclick="openTab('tabs-group-1', 'codigo1')">Código (Python)</button>
+            </div>
+            <div id="descricao1" class="tab-content active">
+                <p>Análise do comportamento do consumidor para entender padrões e preferências de compra.</p>
+            </div>
+            <div id="dados1" class="tab-content">
+                <ul>
+                    <li><a href="dados/clientes.csv" download>clientes.csv</a></li>
+                    <li><a href="dados/vendas.csv" download>vendas.csv</a></li>
+                </ul>
+            </div>
+            <div id="codigo1" class="tab-content">
+                <ul>
+                    <li><a href="codigo/analise_clientes.py" download>analise_clientes.py</a></li>
+                    <li><a href="codigo/modelagem_vendas.py" download>modelagem_vendas.py</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <!-- Projeto 2 -->
+    <article>
+        <h3>Projeto 2: Previsão de Demanda</h3>
+        <div class="tabs-group-2">
+            <div class="tabs">
+                <button class="active" data-tab="descricao2" onclick="openTab('tabs-group-2', 'descricao2')">Descrição</button>
+                <button data-tab="dados2" onclick="openTab('tabs-group-2', 'dados2')">Dados (CSV)</button>
+                <button data-tab="codigo2" onclick="openTab('tabs-group-2', 'codigo2')">Código (Python)</button>
+            </div>
+            <div id="descricao2" class="tab-content active">
+                <p>Previsão de demanda utilizando séries temporais para ajudar na logística e estoque.</p>
+            </div>
+            <div id="dados2" class="tab-content">
+                <ul>
+                    <li><a href="dados/demanda.csv" download>demanda.csv</a></li>
+                </ul>
+            </div>
+            <div id="codigo2" class="tab-content">
+                <ul>
+                    <li><a href="codigo/previsao_demanda.py" download>previsao_demanda.py</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <!-- Projeto 3 -->
+    <article>
+        <h3>Projeto 3: Análise de Sentimento</h3>
+        <div class="tabs-group-3">
+            <div class="tabs">
+                <button class="active" data-tab="descricao3" onclick="openTab('tabs-group-3', 'descricao3')">Descrição</button>
+                <button data-tab="dados3" onclick="openTab('tabs-group-3', 'dados3')">Dados (CSV)</button>
+                <button data-tab="codigo3" onclick="openTab('tabs-group-3', 'codigo3')">Código (Python)</button>
+            </div>
+            <div id="descricao3" class="tab-content active">
+                <p>Análise de sentimento para identificar a percepção de clientes em redes sociais.</p>
+            </div>
+            <div id="dados3" class="tab-content">
+                <ul>
+                    <li><a href="dados/sentimentos.csv" download>sentimentos.csv</a></li>
+                </ul>
+            </div>
+            <div id="codigo3" class="tab-content">
+                <ul>
+                    <li><a href="codigo/analise_sentimento.py" download>analise_sentimento.py</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
 </section>
 
+<!-- Contato -->
 <section id="contato">
     <h2>Contato</h2>
     <p>Fique à vontade para entrar em contato comigo:</p>
-    <ul>
-        <li>Email: <a href="mailto:saraog262@gmail.com">saraog262@@gmail.com</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/sara-oliveira-041a75285 " target="_blank">https://linkedin.com/in/sara-oliveira-041a75285 </a></li>
+    <ul class="contato">
+        <li>Email: <a href="mailto:saraog262@gmail.com">saraog262@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/sara-oliveira-041a75285" target="_blank">https://linkedin.com/in/sara-oliveira-041a75285</a></li>
         <li>GitHub: <a href="https://github.com/saraa452/portifolio" target="_blank">https://github.com/saraa452/portifolio</a></li>
     </ul>
 </section>
