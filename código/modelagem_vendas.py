@@ -2,17 +2,28 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Carregar o arquivo CSV
-df = pd.read_csv('E:\Portifólio\portifolio\dados\vendas.csv')
+# Carregar o arquivo CSV com o separador correto
+df = pd.read_csv(r'E:\Portifólio\portifolio\dados\vendas.csv', sep=';')
+
+# Limpar os espaços em branco dos nomes das colunas
+df.columns = df.columns.str.strip()
+
+# Verificação se as colunas necessárias estão presentes
+required_columns = ['Produto', 'Categoria', 'Valor_Total', 'Data_Venda', 'Forma_Pagamento']
+for col in required_columns:
+    if col not in df.columns:
+        print(f"Coluna '{col}' não encontrada no DataFrame.")
+        exit()
 
 # Configurações iniciais
-plt.style.use('seaborn-darkgrid')
+# Usar um estilo do seaborn diretamente
+sns.set_theme(style="darkgrid")
 sns.set_palette('viridis')
 
 # 1. Visão Geral dos Dados
 print("Resumo Estatístico:")
 print(df.describe(include='all'))
-print("\\nInformações do DataFrame:")
+print("\nInformações do DataFrame:")
 print(df.info())
 
 # 2. Análise de Vendas por Produto
@@ -20,8 +31,8 @@ vendas_por_produto = df.groupby('Produto')['Valor_Total'].sum().sort_values(asce
 
 plt.figure(figsize=(10, 6))
 vendas_por_produto.plot(kind='bar', color='skyblue')
-plt.title('Vendas Totais por Produto')
-plt.xlabel('Produto')
+plt.title('Vendas Totais por Produtos')
+plt.xlabel('Produtos')
 plt.ylabel('Vendas Totais (R$)')
 plt.xticks(rotation=45)
 plt.tight_layout()
@@ -35,12 +46,17 @@ plt.figure(figsize=(8, 6))
 vendas_por_categoria.plot(kind='pie', autopct='%1.1f%%', startangle=90, colors=['#66c2a5', '#fc8d62'])
 plt.title('Distribuição de Vendas por Categoria')
 plt.ylabel('')
+plt.tight_layout()
 plt.savefig('vendas_por_categoria.png')
 plt.show()
 
 # 4. Análise Temporal de Vendas
 # Converter a coluna Data_Venda para datetime
-df['Data_Venda'] = pd.to_datetime(df['Data_Venda'])
+df['Data_Venda'] = pd.to_datetime(df['Data_Venda'], errors='coerce')  # Usar 'coerce' para lidar com erros de conversão
+
+# Remover linhas com datas inválidas
+df = df.dropna(subset=['Data_Venda'])
+
 vendas_por_mes = df.groupby(df['Data_Venda'].dt.to_period('M'))['Valor_Total'].sum()
 
 plt.figure(figsize=(12, 6))
@@ -66,6 +82,7 @@ plt.tight_layout()
 plt.savefig('vendas_por_pagamento.png')
 plt.show()
 
-# Exportar resumo para arquivo CSV
-df.groupby('Produto')['Valor_Total'].sum().reset_index().to_csv('resumo_analise_vendas.csv', index=False, sep=';')
+# 6. Exportar resumo para arquivo CSV
+resumo = df.groupby('Produto')['Valor_Total'].sum().reset_index()
+resumo.to_csv('resumo_analise_vendas.csv', index=False, sep=';')
 print("Resumo exportado para 'resumo_analise_vendas.csv'.")
