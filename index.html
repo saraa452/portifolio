@@ -131,7 +131,7 @@
 <section id="projetos">
     <h2>Projetos</h2>
 
-    <!-- Projeto 1 -->
+    <!-- Modelo de projeto -->
     <article>
         <h3>Projeto 1: Análise de Mercado</h3>
         <div class="tabs-group-1">
@@ -139,6 +139,7 @@
                 <button class="active" data-tab="descricao1" onclick="openTab('tabs-group-1', 'descricao1')">Descrição</button>
                 <button data-tab="dados1" onclick="openTab('tabs-group-1', 'dados1')">Dados (CSV)</button>
                 <button data-tab="codigo1" onclick="openTab('tabs-group-1', 'codigo1')">Código (Python)</button>
+                <button data-tab="resultados1" onclick="openTab('tabs-group-1', 'resultados1')">Resultados</button>
             </div>
             <div id="descricao1" class="tab-content active">
                 <p>Análise do comportamento do consumidor para entender padrões e preferências de compra.</p>
@@ -152,12 +153,17 @@
             <div id="codigo1" class="tab-content">
                 <ul>
                     <li><a href="código/analise_clientes.py" download>analise_clientes.py</a></li>
-                    <li><a href="código/modelagem_vendas.py" download>modelagem_vendas.py</a></li>
+                </ul>
+            </div>
+            <div id="resultados1" class="tab-content">
+                <ul>
+                    <li><a href="resultados/analise_mercado_relatorio.pdf" download>Relatório - Análise de Mercado</a></li>
                 </ul>
             </div>
         </div>
     </article>
 
+    <!-- Modelo repetido para outros projetos -->
     <!-- Projeto 2 -->
     <article>
         <h3>Projeto 2: Previsão de Demanda</h3>
@@ -166,6 +172,7 @@
                 <button class="active" data-tab="descricao2" onclick="openTab('tabs-group-2', 'descricao2')">Descrição</button>
                 <button data-tab="dados2" onclick="openTab('tabs-group-2', 'dados2')">Dados (CSV)</button>
                 <button data-tab="codigo2" onclick="openTab('tabs-group-2', 'codigo2')">Código (Python)</button>
+                <button data-tab="resultados2" onclick="openTab('tabs-group-2', 'resultados2')">Resultados</button>
             </div>
             <div id="descricao2" class="tab-content active">
                 <p>Previsão de demanda utilizando séries temporais para ajudar na logística e estoque.</p>
@@ -180,29 +187,9 @@
                     <li><a href="código/previsao_demanda.py" download>previsao_demanda.py</a></li>
                 </ul>
             </div>
-        </div>
-    </article>
-
-    <!-- Projeto 3 -->
-    <article>
-        <h3>Projeto 3: Análise de Sentimento</h3>
-        <div class="tabs-group-3">
-            <div class="tabs">
-                <button class="active" data-tab="descricao3" onclick="openTab('tabs-group-3', 'descricao3')">Descrição</button>
-                <button data-tab="dados3" onclick="openTab('tabs-group-3', 'dados3')">Dados (CSV)</button>
-                <button data-tab="codigo3" onclick="openTab('tabs-group-3', 'codigo3')">Código (Python)</button>
-            </div>
-            <div id="descricao3" class="tab-content active">
-                <p>Análise de sentimento para identificar a percepção de clientes em redes sociais.</p>
-            </div>
-            <div id="dados3" class="tab-content">
+            <div id="resultados2" class="tab-content">
                 <ul>
-                    <li><a href="dados/sentimentos.csv" download>sentimentos.csv</a></li>
-                </ul>
-            </div>
-            <div id="codigo3" class="tab-content">
-                <ul>
-                    <li><a href="código/analise_sentimento.py" download>analise_sentimento.py</a></li>
+                    <li><a href="resultados/previsao_demanda_graficos.png" download>Gráficos - Previsão de Demanda</a></li>
                 </ul>
             </div>
         </div>
@@ -212,7 +199,6 @@
 <!-- Contato -->
 <section id="contato">
     <h2>Contato</h2>
-    <p>Fique à vontade para entrar em contato comigo:</p>
     <ul class="contato">
         <li>Email: <a href="mailto:saraog262@gmail.com">saraog262@gmail.com</a></li>
         <li>LinkedIn: <a href="https://linkedin.com/in/sara-oliveira-041a75285" target="_blank">https://linkedin.com/in/sara-oliveira-041a75285</a></li>
