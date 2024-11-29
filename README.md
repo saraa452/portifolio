@@ -122,4 +122,10 @@ Sinta-se à vontade para:
 Este projeto está licenciado sob a [MIT License](LICENSE). Sinta-se livre para utilizá-lo, modificar ou distribuir com os devidos créditos.
 
 --- 
-Explore os scripts, analise os dados e contribua para aprimorar ainda mais este projeto! 🎉
+## **Contato**
+Fique à vontade para entrar em contato comigo:
+
+Email: saraog262@gmail.com
+- LinkedIn: https://linkedin.com/in/sara-oliveira-041a75285
+- GitHub: https://github.com/saraa452/portifolio
+ - Site: http://127.0.0.1:5500/index.html
