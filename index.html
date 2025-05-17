@@ -10,11 +10,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F5F5F5; /* Fundo neutro */
-            color: #333333; /* Texto escuro */
+            background-color: #F5F5F5;
+            color: #333333;
         }
         header {
-            background-color: #005B96; /* Azul-profissional */
+            background-color: #005B96;
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -34,26 +34,29 @@
             color: white;
             font-weight: bold;
         }
-        section {
+        main {
             padding: 20px;
+        }
+        section {
             margin: 20px auto;
             max-width: 800px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #333333; /* Fundo escuro */
+            background-color: #333333;
             color: white;
             margin-top: 20px;
         }
         h2, h3 {
-            color: #005B96; /* Azul-profissional para títulos */
+            color: #005B96;
         }
         a {
-            color: #005B96; /* Links */
+            color: #005B96;
             text-decoration: none;
         }
         a:hover {
@@ -120,133 +123,51 @@
     </nav>
 </header>
 
-<!-- Seção Sobre -->
-<section id="sobre">
-    <h2>Sobre Sara</h2>
-    <p>Olá! Sou Sara, analista de dados com 3 anos de experiência. Trabalho como freelance transformando dados brutos em soluções estratégicas. Tenho uma paixão por explorar e interpretar dados para ajudar empresas a tomarem decisões mais informadas e alcançarem o sucesso.</p>
-    <p>Minha experiência inclui trabalhar com ferramentas como Python, R, SQL, Tableau e Power BI. Além disso, sou especialista em análise estatística e visualização de dados, sempre buscando oferecer insights valiosos para os meus clientes.</p>
-</section>
+<main>
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre Sara</h2>
+        <p>Olá! Sou Sara, analista de dados com 3 anos de experiência. Trabalho como freelance transformando dados brutos em soluções estratégicas. Tenho uma paixão por explorar e interpretar dados para ajudar empresas a tomarem decisões mais informadas e alcançarem o sucesso.</p>
+        <p>Minha experiência inclui trabalhar com ferramentas como Python, R, SQL, Tableau e Power BI. Além disso, sou especialista em análise estatística e visualização de dados, sempre buscando oferecer insights valiosos para os meus clientes.</p>
+    </section>
 
-<!-- Projetos -->
-<section id="projetos">
-    <h2>Projetos</h2>
+    <!-- Projetos -->
+    <section id="projetos">
+        <h2>Projetos</h2>
 
-    <!-- Projeto 1 -->
-    <article>
-        <h3>Projeto 1: Análise de Mercado</h3>
-        <div class="tabs-group-1">
-            <div class="tabs">
-                <button class="active" data-tab="descricao1" onclick="openTab('tabs-group-1', 'descricao1')">Descrição</button>
-                <button data-tab="dados1" onclick="openTab('tabs-group-1', 'dados1')">Dados (CSV)</button>
-                <button data-tab="codigo1" onclick="openTab('tabs-group-1', 'codigo1')">Código (Python)</button>
-                <button data-tab="resultados1" onclick="openTab('tabs-group-1','resultados1')">Resultados</button>
+        <!-- Projeto 1 -->
+        <article aria-label="Projeto 1: Análise de Mercado">
+            <h3>Projeto 1: Análise de Mercado</h3>
+            <div class="tabs-group-1">
+                <div class="tabs">
+                    <button class="active" data-tab="descricao1" onclick="openTab('tabs-group-1', 'descricao1')">Descrição</button>
+                    <button data-tab="dados1" onclick="openTab('tabs-group-1', 'dados1')">Dados (CSV)</button>
+                    <button data-tab="codigo1" onclick="openTab('tabs-group-1', 'codigo1')">Código (Python)</button>
+                    <button data-tab="resultados1" onclick="openTab('tabs-group-1','resultados1')">Resultados</button>
+                </div>
+                <div id="descricao1" class="tab-content active">
+                    <p>Análise do comportamento do consumidor para entender padrões e preferências de compra.</p>
+                </div>
+                <div id="dados1" class="tab-content">
+                    <ul>
+                        <li><a href="dados/clientes.csv" download>clientes.csv</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="descricao1" class="tab-content active">
-                <p>Análise do comportamento do consumidor para entender padrões e preferências de compra.</p>
-            </div>
-            <div id="dados1" class="tab-content">
-                <ul>
-                    <li><a href="dados/clientes.csv" download>clientes.csv</a></li>
-                    <li><a href="dados/vendas.csv" download>vendas.csv</a></li>
-                    <li><a href="dados/processado_clientes.csv" download>processado_clientes.csv</a></li>
-                    <li><a href="dados/processado_vendas.csv" download>processado_vendas.csv</a></li>
-                </ul>
-            </div>
-            <div id="codigo1" class="tab-content">
-                <ul>
-                    <li><a href="código/analise_clientes.py" download>analise_clientes.py</a></li>
-                    <li><a href="código/modelagem_vendas.py" download>modelagem_vendas.py</a></li>
-                </ul>
-            </div>
-            <div id="resultados1" class="tab-content">
-                <p>Resultados da análise de mercado:</p>
-                <ul>
-                    <li><a href="Resultados/análise_clientes/distribuicao_genero.png" download>distribuicao_genero.png</a></li>
-                    <li><a href="Resultados/análise_clientes/distribuicao_idade.png" download>distribuicao_idade.png</a></li>
-                    <li><a href="Resultados/análise_clientes/status_fidelidade.png" download>status_fidelidade.png</a></li>
-                    <li><a href="Resultados/análise_clientes/resumo_comportamento_clientes.csv" download>resumo_comportamento_clientes.csv</a></li>
-                </ul>
-            </div>
-        </div>
-    </article>
+        </article>
+    </section>
 
-    <!-- Projeto 2 -->
-    <article>
-        <h3>Projeto 2: Previsão de Demanda</h3>
-        <div class="tabs-group-2">
-            <div class="tabs">
-                <button class="active" data-tab="descricao2" onclick="openTab('tabs-group-2', 'descricao2')">Descrição</button>
-                <button data-tab="dados2" onclick="openTab('tabs-group-2', 'dados2')">Dados (CSV)</button>
-                <button data-tab="codigo2" onclick="openTab('tabs-group-2', 'codigo2')">Código (Python)</button>
-                <button data-tab="resultados2" onclick="openTab('tabs-group-2','resultados2')">Resultados</button>
-            </div>
-            <div id="descricao2" class="tab-content active">
-                <p>Previsão de demanda utilizando séries temporais para ajudar na logística e estoque.</p>
-            </div>
-            <div id="dados2" class="tab-content">
-                <ul>
-                    <li><a href="dados/demanda.csv" download>demanda.csv</a></li>
-                </ul>
-            </div>
-            <div id="codigo2" class="tab-content">
-                <ul>
-                    <li><a href="código/previsao_demanda.py" download>previsao_demanda.py</a></li>
-                </ul>
-            </div>
-            <div id="resultados2" class="tab-content">
-                <ul>
-                    <li><a href="Resultados/análise_demanda/distribuicao_produto.png" download>distribuicao_produto.png</a></li>
-                    <li><a href="Resultados/análise_demanda/evolucao_demanda.png" download>evolucao_demanda.png</a></li>
-                    <li><a href="Resultados/análise_demanda/picos_demanda.png" download>picos_demanda.png</a></li>
-                    <li><a href="Resultados/análise_demanda/resumo_demanda.csv" download>resumo_demanda.csv</a></li>
-                </ul>
-            </div>
-        </div>
-    </article>
-
-    <!-- Projeto 3 -->
-    <article>
-        <h3>Projeto 3: Análise de Sentimento</h3>
-        <div class="tabs-group-3">
-            <div class="tabs">
-                <button class="active" data-tab="descricao3" onclick="openTab('tabs-group-3', 'descricao3')">Descrição</button>
-                <button data-tab="dados3" onclick="openTab('tabs-group-3', 'dados3')">Dados (CSV)</button>
-                <button data-tab="codigo3" onclick="openTab('tabs-group-3', 'codigo3')">Código (Python)</button>
-                <button data-tab="resultados3" onclick="openTab('tabs-group-3','resultados3')">Resultados</button>
-            </div>
-            <div id="descricao3" class="tab-content active">
-                <p>Análise de sentimento para identificar a percepção de clientes em redes sociais.</p>
-            </div>
-            <div id="dados3" class="tab-content">
-                <ul>
-                    <li><a href="dados/sentimentos.csv" download>sentimentos.csv</a></li>
-                </ul>
-            </div>
-            <div id="codigo3" class="tab-content">
-                <ul>
-                    <li><a href="código/analise_sentimento.py" download>analise_sentimento.py</a></li>
-                </ul>
-            </div>
-            <div id="resultados3" class="tab-content">
-                <ul>
-                    <li><a href="Resultados/análise_sentimentos/distribuicao_sentimentos.png" download>distribuicao_sentimentos.png</a></li>
-                    <li><a href="Resultados/análise_sentimentos/resultado_sentimentos.csv" download>resultado_sentimentos.csv</a></li>
-                </ul>
-            </div>
-        </div>
-    </article>
-</section>
-
-<!-- Contato -->
-<section id="contato">
-    <h2>Contato</h2>
-    <p>Fique à vontade para entrar em contato comigo:</p>
-    <ul class="contato">
-        <li>Email: <a href="mailto:saraog262@gmail.com">saraog262@gmail.com</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/sara-oliveira-041a75285" target="_blank">https://linkedin.com/in/sara-oliveira-041a75285</a></li>
-        <li>GitHub: <a href="https://github.com/saraa452/portifolio" target="_blank">https://github.com/saraa452/portifolio</a></li>
-    </ul>
-</section>
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Fique à vontade para entrar em contato comigo:</p>
+        <ul class="contato">
+            <li>Email: <a href="mailto:saraog262@gmail.com">saraog262@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/sara-oliveira-041a75285" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li>GitHub: <a href="https://github.com/saraa452/portifolio" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2024 Sara | Desenvolvido com 💻 e 💡</p>
